@@ -1,0 +1,43 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contabilidad del Hogar</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contabilidad del Hogar</h1>
+            <nav>
+                <button class="nav-button" onclick="showBalance()">Balance</button>
+                <button class="nav-button" onclick="showTransactions()">Transacciones</button>
+            </nav>
+        </header>
+        <div id="initialSalaryForm" class="initial-salary-form">
+            <h2>Ingresa tu sueldo inicial</h2>
+            <form onsubmit="setInitialSalary(event)">
+                <label for="initialSalaryInput">Sueldo Inicial:</label>
+                <input type="number" id="initialSalaryInput" placeholder="Ingresa tu sueldo" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+        <div id="balance" style="display:none;">
+            <h2>Balance: $<span id="balanceAmount">0.00</span></h2>
+        </div>
+        <div id="transactions" style="display:none;">
+            <h2>Transacciones</h2>
+            <ul id="transactionList"></ul>
+        </div>
+        <div id="addTransaction">
+            <h2>Agregar Transacción</h2>
+            <label for="description">Descripción:</label>
+            <input type="text" id="description" placeholder="Descripción">
+            <label for="amount">Cantidad:</label>
+            <input type="number" id="amount" placeholder="Cantidad">
+            <button onclick="addTransaction()">Agregar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
